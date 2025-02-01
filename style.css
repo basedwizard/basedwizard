@@ -1,21 +1,91 @@
-/* Other existing CSS rules */
-
-/* Option 1: Set the image as a background for the container */
-.container {
-  text-align: center;
-  padding: 40px;
-  border-radius: 10px;
-  max-width: 90%;
-  background: url('thebasedwizard.webp') no-repeat center center/cover;
-  /* If you need a fallback color or overlay, add it below */
-  /* background-color: rgba(0, 0, 0, 0.5); */
+/* Basic reset and styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Option 2: Alternatively, if you want the image in a separate section */
-.hero-image {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  margin: 20px auto;
-  display: block;
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Chat container styling */
+.chat-container {
+  width: 350px;
+  max-width: 90%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Chat display area */
+.chat-box {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  height: 400px;
+}
+
+/* Form styling */
+.chat-form {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chat-form input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+}
+
+.chat-form button {
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+/* Message styling */
+.message {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.bot {
+  justify-content: flex-start;
+}
+
+.message-content {
+  max-width: 70%;
+  padding: 8px 12px;
+  border-radius: 5px;
+  word-wrap: break-word;
+}
+
+.message.user .message-content {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.message.bot .message-content {
+  background-color: #eee;
+  color: #333;
 }
