@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Chat Bot</title>
+  <title>Chat Bot with MetaMask Login</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Wallet Connection Section -->
+  <div class="wallet-container">
+    <button id="connectWallet">Connect Wallet</button>
+    <p id="walletAddress"></p>
+  </div>
+
+  <!-- Chat Container -->
   <div class="chat-container">
     <!-- Chat Display Area -->
     <div id="chat-box" class="chat-box"></div>
 
-    <!-- Input Form -->
+    <!-- Chat Input Form -->
     <form id="chat-form" class="chat-form">
       <input
         type="text"
