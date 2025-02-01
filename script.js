@@ -1,6 +1,36 @@
-// Listen for form submission
+// Global variables to track wallet connection status
+let walletConnected = false;
+let userWallet = null;
+
+// Connect Wallet button event listener
+document.getElementById("connectWallet").addEventListener("click", async function () {
+  // Check if MetaMask is installed
+  if (typeof window.ethereum !== "undefined") {
+    try {
+      // Request account access
+      const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+      userWallet = accounts[0];
+      walletConnected = true;
+      document.getElementById("walletAddress").textContent = "Connected wallet: " + userWallet;
+      // Optionally disable the connect button after connecting
+      document.getElementById("connectWallet").disabled = true;
+    } catch (error) {
+      console.error("User rejected wallet connection", error);
+    }
+  } else {
+    alert("MetaMask is not installed. Please install MetaMask to use this feature.");
+  }
+});
+
+// Chat form event listener
 document.getElementById("chat-form").addEventListener("submit", function (e) {
   e.preventDefault();
+
+  // Check if wallet is connected before allowing chat messages
+  if (!walletConnected) {
+    alert("Please connect your wallet first.");
+    return;
+  }
 
   const inputField = document.getElementById("user-input");
   const userMessage = inputField.value.trim();
