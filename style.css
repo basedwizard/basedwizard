@@ -1,0 +1,21 @@
+/* Other existing CSS rules */
+
+/* Option 1: Set the image as a background for the container */
+.container {
+  text-align: center;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 90%;
+  background: url('thebasedwizard.webp') no-repeat center center/cover;
+  /* If you need a fallback color or overlay, add it below */
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+/* Option 2: Alternatively, if you want the image in a separate section */
+.hero-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+}
