@@ -3,31 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Based Wizard</title>
+  <title>Simple Chat Bot</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <!-- Header Section -->
-    <header>
-      <h1>Based Wizard</h1>
-    </header>
-    
-    <!-- Main Content Section -->
-    <main>
-      <p>Welcome to the realm of magic and wisdom!</p>
-      <!-- Insert your image here -->
-      <img src="thebasedwizard.webp" alt="Based Wizard" class="hero-image" />
-      
-      <!-- A sample button for interactivity -->
-      <button id="actionButton">Discover Magic</button>
-    </main>
-    
-    <!-- Footer Section -->
-    <footer>
-      <p>&copy; 2025 Your Name. All rights reserved.</p>
-    </footer>
+  <div class="chat-container">
+    <!-- Chat Display Area -->
+    <div id="chat-box" class="chat-box"></div>
+
+    <!-- Input Form -->
+    <form id="chat-form" class="chat-form">
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Type a message..."
+        autocomplete="off"
+        required
+      />
+      <button type="submit">Send</button>
+    </form>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
