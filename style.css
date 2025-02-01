@@ -1,4 +1,4 @@
-/* Basic reset and styling */
+/* Basic reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +9,21 @@ body {
   background-color: #f2f2f2;
   font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  padding: 20px;
+}
+
+/* Wallet container styling */
+.wallet-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#walletAddress {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #333;
 }
 
 /* Chat container styling */
