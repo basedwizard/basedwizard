@@ -5,31 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chat Bot with MetaMask Login</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 </head>
 <body>
-  <!-- Wallet Connection Section -->
-  <div class="wallet-container">
-    <button id="connectWallet">Connect Wallet</button>
-    <p id="walletAddress"></p>
-  </div>
+<!-- Wallet Connection Section (already exists) -->
+<div class="wallet-container">
+  <button id="connectWallet">Connect Wallet</button>
+  <p id="walletAddress"></p>
+</div>
 
-  <!-- Chat Container -->
-  <div class="chat-container">
-    <!-- Chat Display Area -->
-    <div id="chat-box" class="chat-box"></div>
+<!-- Chat Container (already exists) -->
+<div class="chat-container">
+  <!-- Chat Display Area -->
+  <div id="chat-box" class="chat-box"></div>
 
-    <!-- Chat Input Form -->
-    <form id="chat-form" class="chat-form">
-      <input
-        type="text"
-        id="user-input"
-        placeholder="Type a message..."
-        autocomplete="off"
-        required
-      />
-      <button type="submit">Send</button>
-    </form>
-  </div>
+  <!-- Chat Input Form -->
+  <form id="chat-form" class="chat-form">
+    <input
+      type="text"
+      id="user-input"
+      placeholder="Type a message..."
+      autocomplete="off"
+      required
+    />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<!-- Payment Button -->
+<div style="margin-top:20px; text-align:center;">
+  <button id="payButton">Pay 1000 Tokens</button>
+</div>
 
   <script src="script.js"></script>
 </body>
