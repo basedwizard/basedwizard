@@ -3,40 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chat Bot with MetaMask Login</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+  <title>Based Wizard – Home</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<!-- Wallet Connection Section (already exists) -->
-<div class="wallet-container">
-  <button id="connectWallet">Connect Wallet</button>
-  <p id="walletAddress"></p>
-</div>
-
-<!-- Chat Container (already exists) -->
-<div class="chat-container">
-  <!-- Chat Display Area -->
-  <div id="chat-box" class="chat-box"></div>
-
-  <!-- Chat Input Form -->
-  <form id="chat-form" class="chat-form">
-    <input
-      type="text"
-      id="user-input"
-      placeholder="Type a message..."
-      autocomplete="off"
-      required
-    />
-    <button type="submit">Send</button>
-  </form>
-</div>
-
-<!-- Payment Button -->
-<div style="margin-top:20px; text-align:center;">
-  <button id="payButton">Pay 1000 Tokens</button>
-</div>
-
-  <script src="script.js"></script>
+  <header>
+    <h1>Based Wizard</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="payment.html">Payment</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h2>Welcome to Based Wizard</h2>
+      <p>Connect your wallet, chat with our bot, and even pay using Based Wizard tokens!</p>
+      <p>Use the navigation above to explore the site.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Based Wizard. All rights reserved.</p>
+  </footer>
+  <!-- Optional common JS -->
+  <script src="js/main.js"></script>
 </body>
 </html>
