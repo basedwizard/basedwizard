@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment – Based Wizard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Include ethers.js for payment functionality -->
+  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+</head>
+<body>
+  <header>
+    <h1>Based Wizard Payment</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chat.html">Chat</a></li>
+        <li><a href="payment.html">Payment</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="wallet-container">
+      <button id="connectWallet">Connect Wallet</button>
+      <p id="walletAddress"></p>
+    </div>
+    <div class="payment-container">
+      <p>Click the button below to send 1,000 Based Wizard tokens.</p>
+      <button id="payButton">Pay 1000 Based Wizard</button>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Based Wizard. All rights reserved.</p>
+  </footer>
+  <script src="js/payment.js"></script>
+</body>
+</html>
