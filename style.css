@@ -1,53 +1,104 @@
-/* Basic reset */
+/* Reset some basic browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body & global styles */
 body {
-  background-color: #f2f2f2;
   font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: #f2f2f2;
+  color: #333;
+  line-height: 1.6;
   padding: 20px;
 }
 
-/* Wallet container styling */
-.wallet-container {
+/* Header and Navigation */
+header {
+  background: #333;
+  color: #fff;
+  padding: 15px 20px;
   margin-bottom: 20px;
+}
+
+header h1 {
+  margin-bottom: 10px;
   text-align: center;
 }
 
-#walletAddress {
-  margin-top: 10px;
-  font-size: 0.9em;
-  color: #333;
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
 }
 
-/* Chat container styling */
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Hero Section for index.html */
+.hero {
+  text-align: center;
+  padding: 40px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* Wallet Container */
+.wallet-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wallet-container button {
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.wallet-container button:hover {
+  background: #0056b3;
+}
+
+/* Chat Container */
 .chat-container {
-  width: 350px;
-  max-width: 90%;
-  background-color: #fff;
+  background: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0 auto 20px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  height: 400px;
 }
 
-/* Chat display area */
 .chat-box {
   flex: 1;
   padding: 10px;
   overflow-y: auto;
-  height: 400px;
 }
 
-/* Form styling */
 .chat-form {
   display: flex;
   border-top: 1px solid #ddd;
@@ -62,14 +113,19 @@ body {
 
 .chat-form button {
   border: none;
-  background-color: #007BFF;
+  background: #007BFF;
   color: #fff;
   padding: 10px 15px;
-  cursor: pointer;
   font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-/* Message styling */
+.chat-form button:hover {
+  background: #0056b3;
+}
+
+/* Message Styling */
 .message {
   margin: 10px 0;
   display: flex;
@@ -84,7 +140,7 @@ body {
   justify-content: flex-start;
 }
 
-.message-content {
+.message .message-content {
   max-width: 70%;
   padding: 8px 12px;
   border-radius: 5px;
@@ -92,11 +148,49 @@ body {
 }
 
 .message.user .message-content {
-  background-color: #007BFF;
+  background: #007BFF;
   color: #fff;
 }
 
 .message.bot .message-content {
-  background-color: #eee;
+  background: #eee;
   color: #333;
+}
+
+/* Payment Container */
+.payment-container {
+  text-align: center;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.payment-container button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.payment-container button:hover {
+  background: #218838;
+}
+
+/* About Section */
+.about {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
 }
