@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Global variables for the chat page
   let walletConnected = false;
   let userWallet = null;
+  // Check localStorage to see if the user has already paid
+  let paymentMade = localStorage.getItem("paid") === "true";
 
   // Connect Wallet event
   document.getElementById("connectWallet").addEventListener("click", async function () {
@@ -20,11 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Chat form event
+  // Chat form event – only allow sending if payment has been made
   document.getElementById("chat-form").addEventListener("submit", function (e) {
     e.preventDefault();
     if (!walletConnected) {
       alert("Please connect your wallet first.");
+      return;
+    }
+    if (!paymentMade) {
+      alert("Please complete the payment of 1000 Based Wizard tokens before sending a message.");
       return;
     }
     const inputField = document.getElementById("user-input");
@@ -32,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (userMessage === "") return;
     appendMessage("user", userMessage);
     inputField.value = "";
-    // Simulate a bot response after a short delay
+    // Simulate bot response after a short delay
     setTimeout(() => {
       const botResponse = getBotResponse(userMessage);
       appendMessage("bot", botResponse);
