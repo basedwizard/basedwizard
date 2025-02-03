@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Global variables for the payment page
   let walletConnected = false;
   let userWallet = null;
 
@@ -27,28 +26,28 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     try {
-      // Create an ethers provider and signer from MetaMask
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
 
-      // Based Wizard token contract address and minimal ABI (only transfer)
+      // Based Wizard token contract address and minimal ABI (only the transfer function)
       const tokenAddress = "0xaa893870659de7a68c095f72a58bf49e8e647d2a";
       const tokenAbi = [
         "function transfer(address recipient, uint256 amount) public returns (bool)"
       ];
       const tokenContract = new ethers.Contract(tokenAddress, tokenAbi, signer);
 
-      // In this example, the recipient is the same as the token address (per your instructions)
+      // Recipient is the same as the token address per instructions
       const recipient = tokenAddress;
-      // Assume the token has 18 decimals; adjust if needed
+      // Adjust decimals if needed. This example assumes 18 decimals.
       const amount = ethers.utils.parseUnits("1000", 18);
 
-      // Execute the token transfer
       const tx = await tokenContract.transfer(recipient, amount);
       console.log("Transaction submitted:", tx.hash);
       await tx.wait();
       console.log("Token payment successful!");
-      alert("You have successfully sent 1000 Based Wizard tokens!");
+      // Set a flag so that the chat page knows the user has paid.
+      localStorage.setItem("paid", "true");
+      alert("Payment successful! You have sent 1000 Based Wizard tokens. You can now chat.");
     } catch (error) {
       console.error("Payment error:", error);
       alert("There was an error processing your payment. Please check the console for details.");
